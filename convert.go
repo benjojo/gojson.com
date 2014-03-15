@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"go/format"
 	"io"
-	"os"
 	"reflect"
 	"sort"
 	"strings"
