@@ -16,8 +16,8 @@ func main() {
 
 func Convertjson(rw http.ResponseWriter, req *http.Request) string {
 	if output, err := generate(req.Body, "Foo", "main"); err != nil {
-		return string(output)
-	} else {
 		return "Error!, Is that json?"
+	} else {
+		return string(output)
 	}
 }
