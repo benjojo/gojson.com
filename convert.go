@@ -127,29 +127,3 @@ func typeForValue(value interface{}) string {
 	}
 	return reflect.TypeOf(value).Name()
 }
-
-// Return true if os.Stdin appears to be interactive
-func isInteractive() bool {
-	fileInfo, err := os.Stdin.Stat()
-	if err != nil {
-		return false
-	}
-	return fileInfo.Mode()&(os.ModeCharDevice|os.ModeCharDevice) != 0
-}
-
-// func main() {
-// 	flag.Parse()
-
-// 	if isInteractive() {
-// 		flag.Usage()
-// 		fmt.Fprintln(os.Stderr, "Expects input on stdin")
-// 		os.Exit(1)
-// 	}
-
-// 	if output, err := generate(os.Stdin, *name, *pkg); err != nil {
-// 		fmt.Fprintln(os.Stderr, "error parsing", err)
-// 		os.Exit(1)
-// 	} else {
-// 		fmt.Print(string(output))
-// 	}
-// }
