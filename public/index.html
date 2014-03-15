@@ -35,7 +35,7 @@
         <p class="lead">Use this as a way to quickly start decoding any json in golang.<br></p>
         <textarea id="json_input" name="json_input" class="json_input" rows="20" cols="100" spellcheck="false" placeholder="Enter JSON to validate" wrap="off" style="resize: both; width: 889px; max-width: 883px;"></textarea>
       </div>
-
+      <a id="gcbutton" class="btn btn-primary btn-lg" role="button">Get code</a>
     </div><!-- /.container -->
 
 
@@ -43,5 +43,13 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>
+      $('#gcbutton').on("click",function() {
+        $.post( "/cnv", $('#json_input').val())
+          .done(function( data ) {
+            $('#json_input').val(data)
+          });
+      });
+    </script>
   </body>
 </html>
