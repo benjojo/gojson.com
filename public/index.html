@@ -49,6 +49,7 @@
         $.post( "/cnv", $('#json_input').val())
           .done(function( data ) {
             $('#json_input').val(data)
+            $('#gcbutton').text("Get code");
           });
       });
     </script>
