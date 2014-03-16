@@ -50,8 +50,17 @@
           .done(function( data ) {
             $('#json_input').val(data)
             $('#gcbutton').text("Get code");
+            $('#gcbutton').attr('disabled', true);
           });
       });
+
+      $('#json_input').on("keydown",function() {
+        if($('#json_input').val().substring(0,1) == "p") {
+            $('#gcbutton').attr('disabled', true);
+        } else {
+            $('#gcbutton').attr('disabled', false);         
+        }
+      })
     </script>
   </body>
 </html>
