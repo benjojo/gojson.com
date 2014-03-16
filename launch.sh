@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Launching gojson.com"
 go get
 go build
 mv gojson.com /tmp/
