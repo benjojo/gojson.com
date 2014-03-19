@@ -5,3 +5,10 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+#json_input {
+  resize: both;
+  width: 889px;
+  max-width: 883px;
+  font-family: monospace;
+}
