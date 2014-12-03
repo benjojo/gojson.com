@@ -1,17 +1,14 @@
-package main
+package gojson
 
 import (
 	"github.com/codegangsta/martini"
 	"net/http"
 )
 
-func main() {
+func init() {
 	m := martini.Classic()
-	m.Get("/", func() string {
-		return "Hello world!"
-	})
 	m.Post("/cnv", Convertjson)
-	m.Run()
+	http.Handle("/", m)
 }
 
 func Convertjson(rw http.ResponseWriter, req *http.Request) string {
