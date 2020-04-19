@@ -1,14 +1,17 @@
-package gojson
+package main
 
 import (
-	"github.com/codegangsta/martini"
 	"net/http"
+
+	"github.com/codegangsta/martini"
+	"google.golang.org/appengine"
 )
 
-func init() {
+func main() {
 	m := martini.Classic()
 	m.Post("/cnv", Convertjson)
 	http.Handle("/", m)
+	appengine.Main()
 }
 
 func Convertjson(rw http.ResponseWriter, req *http.Request) string {
